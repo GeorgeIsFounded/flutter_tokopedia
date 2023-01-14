@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:tokopedia/app/routes/app_pages.dart';
 import 'package:tokopedia/config/warna.dart';
 
 import '../controllers/splash_screen_controller.dart';
@@ -38,7 +39,8 @@ class SplashScreenView extends GetView<SplashScreenController> {
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: 55),
+                    fontSize: 55,
+                    fontFamily: "RalewayL"),
               ),
             ),
             Container(
@@ -66,14 +68,19 @@ class SplashScreenView extends GetView<SplashScreenController> {
                 ),
               ),
             ),
-            Container(
-              width: lebar,
-              margin: EdgeInsets.only(top: 80),
-              child: Center(
-                  child: Text(
-                "Already have an account? Login",
-                style: TextStyle(color: Colors.white, fontSize: 14),
-              )),
+            InkWell(
+              onTap: () {
+                Get.toNamed(Routes.LOGIN);
+              },
+              child: Container(
+                width: lebar,
+                margin: EdgeInsets.only(top: 80),
+                child: Center(
+                    child: Text(
+                  "Already have an account? Login",
+                  style: TextStyle(color: Colors.white, fontSize: 14),
+                )),
+              ),
             )
           ],
         ),
