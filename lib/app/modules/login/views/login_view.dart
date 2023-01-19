@@ -118,7 +118,9 @@ class LoginView extends GetView<LoginController> {
                               backgroundColor: bgLogin2,
                               minimumSize: Size(500, 55),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.toNamed("/home");
+                            },
                             child: Text(
                               "Login",
                               style: TextStyle(color: Colors.white),
