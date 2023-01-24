@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+import 'package:tokopedia/app/routes/app_pages.dart';
 import 'package:tokopedia/config/warna.dart';
 
 import '../controllers/home_controller.dart';
@@ -774,129 +775,135 @@ Widget produkPilihan(lebar, tinggi) {
 }
 
 Widget forRizqi(lebar, tinggi) {
-  return Container(
-    margin: EdgeInsets.fromLTRB(0, 10, 12, 10),
-    height: tinggi * 0.43,
-    width: 220,
-    decoration: BoxDecoration(boxShadow: [
-      BoxShadow(color: Colors.grey, blurRadius: 3, offset: Offset(3, 4))
-    ], color: Colors.white, borderRadius: BorderRadius.circular(10)),
-    child: Column(
-      children: [
-        Container(
-          height: tinggi * 0.2,
-          width: lebar,
-          decoration: BoxDecoration(),
-          child: Image.asset(
-            "../../../../../assets/wireless.png",
-            fit: BoxFit.fill,
+  return InkWell(
+    onTap: () {
+      Get.toNamed(Routes.DETAIL);
+    },
+    child: Container(
+      margin: EdgeInsets.fromLTRB(0, 10, 12, 10),
+      height: tinggi * 0.43,
+      width: 220,
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(color: Colors.grey, blurRadius: 3, offset: Offset(3, 4))
+      ], color: Colors.white, borderRadius: BorderRadius.circular(10)),
+      child: Column(
+        children: [
+          Container(
+            height: tinggi * 0.2,
+            width: lebar,
+            decoration: BoxDecoration(),
+            child: Image.asset(
+              "../../../../../assets/wireless.png",
+              fit: BoxFit.fill,
+            ),
           ),
-        ),
-        Container(
-          padding: EdgeInsets.all(7),
-          child: Column(
-            children: [
-              Container(
-                child: Text(
-                  "SteelSeries Rival 3 Wireless - Gaming ...",
-                  style: TextStyle(fontSize: 17),
-                ),
-              ),
-              Row(
-                children: [
-                  Text(
-                    "Rp 699.000",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          Container(
+            padding: EdgeInsets.all(7),
+            child: Column(
+              children: [
+                Container(
+                  child: Text(
+                    "SteelSeries Rival 3 Wireless - Gaming ...",
+                    style: TextStyle(fontSize: 17),
                   ),
-                ],
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 5),
-                child: Row(
+                ),
+                Row(
                   children: [
-                    Container(
-                      margin: EdgeInsets.only(right: 10),
-                      padding:
-                          EdgeInsets.only(left: 8, right: 8, top: 3, bottom: 3),
-                      child: Text(
-                        "12%",
-                        style: TextStyle(
-                            color: Colors.red.shade700,
-                            fontWeight: FontWeight.bold),
+                    Text(
+                      "Rp 699.000",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                  ],
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 5),
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: 10),
+                        padding: EdgeInsets.only(
+                            left: 8, right: 8, top: 3, bottom: 3),
+                        child: Text(
+                          "12%",
+                          style: TextStyle(
+                              color: Colors.red.shade700,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        decoration: BoxDecoration(color: diskon),
                       ),
-                      decoration: BoxDecoration(color: diskon),
+                      Container(
+                        child: Text(
+                          "Rp 790.000",
+                          style: TextStyle(
+                              color: Colors.grey.shade600,
+                              decoration: TextDecoration.lineThrough),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 7),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 20,
+                        width: 20,
+                        child: Image.asset("../../../../../assets/badge.png"),
+                      ),
+                      Container(
+                        child: Text(
+                          "Jakarta Pusat",
+                          style: TextStyle(
+                              color: Colors.grey.shade600, fontSize: 15),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(bottom: 10, top: 10),
+                  child: StepProgressIndicator(
+                    totalSteps: 100,
+                    currentStep: 30,
+                    size: 5,
+                    padding: 0,
+                    selectedColor: Colors.red.shade600,
+                    unselectedColor: Color(0xffeeeeee),
+                    roundedEdges: Radius.circular(2),
+                  ),
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow.shade700,
+                      size: 20,
+                    ),
+                    Text(
+                      "5.0",
+                      style: TextStyle(fontWeight: FontWeight.w100),
                     ),
                     Container(
-                      child: Text(
-                        "Rp 790.000",
-                        style: TextStyle(
-                            color: Colors.grey.shade600,
-                            decoration: TextDecoration.lineThrough),
-                      ),
+                      margin: EdgeInsets.only(left: 5, right: 10),
+                      height: 13,
+                      width: 1,
+                      color: Colors.grey,
+                    ),
+                    Text(
+                      "Terjual 124",
+                      style: TextStyle(
+                          color: Colors.grey.shade600,
+                          fontWeight: FontWeight.w100),
                     )
                   ],
                 ),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 7),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 20,
-                      width: 20,
-                      child: Image.asset("../../../../../assets/badge.png"),
-                    ),
-                    Container(
-                      child: Text(
-                        "Jakarta Pusat",
-                        style: TextStyle(
-                            color: Colors.grey.shade600, fontSize: 15),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 10, top: 10),
-                child: StepProgressIndicator(
-                  totalSteps: 100,
-                  currentStep: 30,
-                  size: 5,
-                  padding: 0,
-                  selectedColor: Colors.red.shade600,
-                  unselectedColor: Color(0xffeeeeee),
-                  roundedEdges: Radius.circular(2),
-                ),
-              ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.star,
-                    color: Colors.yellow.shade700,
-                    size: 20,
-                  ),
-                  Text(
-                    "5.0",
-                    style: TextStyle(fontWeight: FontWeight.w100),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 5, right: 10),
-                    height: 13,
-                    width: 1,
-                    color: Colors.grey,
-                  ),
-                  Text(
-                    "Terjual 124",
-                    style: TextStyle(
-                        color: Colors.grey.shade600,
-                        fontWeight: FontWeight.w100),
-                  )
-                ],
-              ),
-            ],
-          ),
-        )
-      ],
+              ],
+            ),
+          )
+        ],
+      ),
     ),
   );
 }
